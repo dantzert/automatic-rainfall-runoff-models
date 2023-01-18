@@ -540,7 +540,7 @@ for target in range(1,len(depths.columns)):
   fig.suptitle(str("Training "+ str(fake_names[fake_name_index]  + " | R^2 = {r2:.2f}".format(r2=r2scores[to_plot_idx])  )  ) ,fontsize=45,y=0.98)
 
   plt.tight_layout()
-  plt.savefig(str("G:/My Drive/SINDy/SWMM-model-reduction/AnnArborFull/swmm_results/target" + str(test_depths.columns.to_list()[target]) + "_training_results.png"), dpi=300)
+  plt.savefig(str("filepath/swmm_results/target" + str(test_depths.columns.to_list()[target]) + "_training_results.png"), dpi=300)
   plt.close()
         
         
@@ -580,7 +580,7 @@ for target in range(1,len(depths.columns)):
   #fig.suptitle(str("Testing "+ str(depths.columns[target]) + " | MAE = {mae:.2f} ft".format(mae=mae[to_plot_idx]) ),fontsize=45,y=0.98)
   fig.suptitle(str("Testing "+ str(fake_names[fake_name_index]  + " | MAE = {mae:.2f} ft".format(mae=mae[to_plot_idx]) ) ) ,fontsize=45,y=0.98)
   plt.tight_layout()
-  plt.savefig(str("G:/My Drive/SINDy/SWMM-model-reduction/AnnArborFull/swmm_results/target" + str(test_depths.columns.to_list()[target]) + "_testgen_results.png"), dpi=300)
+  plt.savefig(str("filepath/swmm_results/target" + str(test_depths.columns.to_list()[target]) + "_testgen_results.png"), dpi=300)
   plt.close()
 
   fake_name_index = fake_name_index +1
