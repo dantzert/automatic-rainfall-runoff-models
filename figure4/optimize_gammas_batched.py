@@ -378,8 +378,8 @@ start_index = 0
 print("start index")
 print(start_index)
 
-#with pyswmm.output.Output('/content/drive/MyDrive/SINDy/SWMM-model-reduction/AnnArborFull/full_ann_arbor_090216/full_ann_arbor.out') as out:
-with pyswmm.output.Output("G:/My Drive/SINDy/SWMM-model-reduction/AnnArborFull/full_ann_arbor_090216/train.out") as out:
+
+with pyswmm.output.Output(filepath_to_trainout) as out:
     # 1200 junctions, so stepping 30 loads about 40 sites
 
   #depths = pd.DataFrame(columns= list(out.nodes.keys())[start_index:-1:30], index = out.node_series(index=0,attribute=swmm.toolkit.shared_enum.NodeAttribute.INVERT_DEPTH))
@@ -405,8 +405,8 @@ x = np.array(depths)
 print("training data loaded")
 print("begin loading testing data")
 
-#with pyswmm.output.Output('/content/drive/MyDrive/SINDy/SWMM-model-reduction/AnnArborFull/full_ann_arbor_090216/test.out') as out:
-with pyswmm.output.Output("G:/My Drive/SINDy/SWMM-model-reduction/AnnArborFull/full_ann_arbor_090216/test.out") as out:
+
+with pyswmm.output.Output(filepath_to_testout) as out:
   #test_depths = pd.DataFrame(columns= list(out.nodes.keys())[start_index:-1:30], index = out.node_series(index=0,attribute=swmm.toolkit.shared_enum.NodeAttribute.INVERT_DEPTH))
   test_depths = pd.DataFrame(columns= list(["88-55483", "1771_PLYMOUTH_2","37035_6"]), index = out.node_series(index=0,attribute=swmm.toolkit.shared_enum.NodeAttribute.INVERT_DEPTH))
 
